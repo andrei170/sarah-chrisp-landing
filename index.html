@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sarah Chrisp - The Ecomm Clubhouse</title>
+<meta name="description" content="Ten years of teaching Shopify. 1.46M YouTube subscribers. 2,000+ Trustpilot reviews. Inside The Ecomm Clubhouse.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg:#0a1f24;--bg-2:#0e2830;--surface:#12333d;--line:rgba(45,212,191,.14);
+--text:#f5f1e6;--muted:#9fb3b0;--accent:#14b8a6;--accent-2:#2dd4bf;--glow:#5eead4;--cream:#fdf6e3;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.65;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(45,212,191,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(45,212,191,.02) 1px,transparent 1px);background-size:44px 44px;pointer-events:none;z-index:0}
+body::after{content:'';position:fixed;top:-20%;left:50%;transform:translateX(-50%);width:85%;height:70%;background:radial-gradient(circle,rgba(45,212,191,.08) 0%,transparent 60%);pointer-events:none;z-index:0}
+.container{max-width:1180px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+nav{padding:26px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(10,31,36,.92);backdrop-filter:blur(14px);z-index:100}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.logo{font-weight:800;font-size:17px;letter-spacing:.05em;color:var(--cream)}
+.logo span{background:linear-gradient(135deg,var(--accent) 0%,var(--glow) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-left:8px}
+.nav-cta{padding:10px 22px;background:linear-gradient(135deg,var(--accent) 0%,var(--accent-2) 100%);color:#0a1f24;border-radius:8px;text-decoration:none;font-weight:700;font-size:14px}
+section{padding:100px 0;position:relative}
+.eyebrow{display:inline-block;padding:6px 14px;background:rgba(45,212,191,.1);border:1px solid rgba(45,212,191,.3);border-radius:20px;font-size:12px;font-weight:600;color:var(--glow);letter-spacing:.18em;text-transform:uppercase;margin-bottom:24px}
+h1{font-size:clamp(40px,6vw,72px);font-weight:800;line-height:1.05;letter-spacing:-.03em;margin-bottom:24px;color:var(--cream)}
+h1 em{font-style:normal;background:linear-gradient(135deg,var(--accent) 0%,var(--glow) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+h2{font-size:clamp(30px,4vw,46px);font-weight:700;line-height:1.15;letter-spacing:-.02em;margin-bottom:20px;color:var(--cream)}
+h3{font-size:22px;font-weight:600;margin-bottom:14px;color:var(--cream)}
+p{color:var(--muted);font-size:17px;max-width:680px}
+.hero{padding-top:80px;text-align:center}
+.hero p{font-size:20px;margin:0 auto 40px;max-width:720px}
+.cta-primary{display:inline-block;padding:18px 38px;background:linear-gradient(135deg,var(--accent) 0%,var(--accent-2) 100%);color:#0a1f24;text-decoration:none;border-radius:12px;font-weight:700;font-size:16px;box-shadow:0 10px 40px rgba(45,212,191,.25);transition:.2s}
+.cta-primary:hover{transform:translateY(-2px)}
+.vsl-box{max-width:900px;margin:60px auto;aspect-ratio:16/9;background:linear-gradient(135deg,var(--surface) 0%,var(--bg-2) 100%);border:1px solid var(--line);border-radius:16px;display:flex;align-items:center;justify-content:center;position:relative}
+.vsl-box::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at center,rgba(45,212,191,.08) 0%,transparent 60%);border-radius:16px}
+.play-btn{width:88px;height:88px;border-radius:50%;background:rgba(45,212,191,.15);border:2px solid var(--accent-2);display:flex;align-items:center;justify-content:center;z-index:1}
+.play-btn svg{width:32px;height:32px;fill:var(--glow);margin-left:4px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin:80px 0 0;padding:40px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stat-num{font-size:38px;font-weight:800;background:linear-gradient(135deg,var(--accent) 0%,var(--glow) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-.03em}
+.stat-label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;margin-top:6px}
+.problem-grid,.pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:50px}
+.card{padding:36px;background:linear-gradient(180deg,var(--surface) 0%,var(--bg-2) 100%);border:1px solid var(--line);border-radius:16px;transition:.3s}
+.card:hover{border-color:rgba(45,212,191,.4);transform:translateY(-4px)}
+.card-num{font-size:13px;color:var(--glow);font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:16px}
+.card p{font-size:15px}
+.divider{height:1px;background:linear-gradient(90deg,transparent 0%,var(--line) 50%,transparent 100%)}
+.lead-capture{background:linear-gradient(135deg,rgba(45,212,191,.08) 0%,rgba(94,234,212,.04) 100%);border:1px solid rgba(45,212,191,.2);border-radius:24px;padding:70px 60px;text-align:center;margin:80px 0}
+.lead-capture h2{max-width:640px;margin:0 auto 20px}
+.lead-capture p{margin:0 auto}
+.form-row{display:flex;gap:12px;max-width:520px;margin:36px auto 0}
+.form-row input{flex:1;padding:18px 22px;background:var(--bg);border:1px solid var(--line);border-radius:12px;color:var(--text);font-size:15px;font-family:inherit}
+.form-row input:focus{outline:none;border-color:var(--accent-2)}
+.form-row button{padding:18px 32px;background:linear-gradient(135deg,var(--accent) 0%,var(--accent-2) 100%);color:#0a1f24;border:none;border-radius:12px;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit}
+.offer-box{background:linear-gradient(135deg,#0c262d 0%,#143139 100%);border:1px solid rgba(45,212,191,.25);border-radius:24px;padding:60px;margin-top:40px}
+.offer-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center}
+.offer-price{font-size:46px;font-weight:800;background:linear-gradient(135deg,var(--accent) 0%,var(--glow) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-.02em;line-height:1.15}
+.offer-price small{font-size:17px;color:var(--muted);font-weight:500;-webkit-text-fill-color:var(--muted);display:block;margin-top:8px}
+.feature-list{list-style:none;margin-top:24px}
+.feature-list li{padding:12px 0;color:var(--cream);display:flex;align-items:flex-start;gap:12px;font-size:15px}
+.feature-list li::before{content:'✓';color:var(--glow);font-weight:700;flex-shrink:0}
+.faq-item{border-bottom:1px solid var(--line);padding:24px 0;cursor:pointer}
+.faq-q{display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:18px;color:var(--cream)}
+.faq-plus{width:24px;height:24px;position:relative;flex-shrink:0}
+.faq-plus::before,.faq-plus::after{content:'';position:absolute;background:var(--glow);top:50%;left:50%;transition:.3s}
+.faq-plus::before{width:14px;height:2px;transform:translate(-50%,-50%)}
+.faq-plus::after{width:2px;height:14px;transform:translate(-50%,-50%)}
+.faq-item.open .faq-plus::after{transform:translate(-50%,-50%) rotate(90deg);opacity:0}
+.faq-a{max-height:0;overflow:hidden;transition:.3s}
+.faq-item.open .faq-a{max-height:300px;padding-top:14px}
+.footer{padding:60px 0;border-top:1px solid var(--line);text-align:center}
+.footer p{margin:0 auto;font-size:14px}
+@media(max-width:768px){
+.problem-grid,.pillar-grid,.stats{grid-template-columns:1fr}
+.offer-grid{grid-template-columns:1fr}
+.lead-capture,.offer-box{padding:40px 24px}
+.form-row{flex-direction:column}
+section{padding:70px 0}
+.stats{gap:20px}
+.logo{font-size:14px}
+}
+.reveal{opacity:0;transform:translateY(30px);transition:.8s}
+.reveal.in{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+<nav>
+<div class="container nav-inner">
+<div class="logo">SARAH CHRISP<span>GROWTH PACKAGE</span></div>
+<a href="#apply" class="nav-cta">Book A Call</a>
+</div>
+</nav>
+
+<section class="hero">
+<div class="container">
+<div class="eyebrow reveal">THE ECOMM CLUBHOUSE</div>
+<h1 class="reveal">Build A Real Shopify Business <em>The Boring, Proper Way</em></h1>
+<p class="reveal">Ten years of teaching. 1.46 million YouTube subscribers. Two thousand-plus Trustpilot reviews on the membership. Inside The Ecomm Clubhouse, the teacher-led Shopify education that actually ships results.</p>
+<div class="vsl-box reveal">
+<div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+</div>
+<a href="#apply" class="cta-primary reveal">See What's Inside →</a>
+<div class="stats reveal">
+<div><div class="stat-num">1.46M</div><div class="stat-label">YouTube Subs</div></div>
+<div><div class="stat-num">2,000+</div><div class="stat-label">Trustpilot Reviews</div></div>
+<div><div class="stat-num">Shopify</div><div class="stat-label">Education Partner</div></div>
+<div><div class="stat-num">10 yrs</div><div class="stat-label">Operating</div></div>
+</div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<section>
+<div class="container">
+<div class="eyebrow reveal">THE PROBLEM</div>
+<h2 class="reveal">Most New Shopify Stores<br>Die Inside Ninety Days</h2>
+<p class="reveal" style="font-size:18px">It is almost never effort. It is almost always the wrong three decisions made before a single product goes live.</p>
+<div class="problem-grid">
+<div class="card reveal"><div class="card-num">KILLER 01</div><h3>Niche Picked On Passion</h3><p>Owners pick what they love instead of what the data says will sell. Cat supplies. Yoga leggings. Phone cases. Saturated, crowded, almost impossible to rank.</p></div>
+<div class="card reveal"><div class="card-num">KILLER 02</div><h3>No Real Product Research</h3><p>Products get listed without a supplier sample, without margin checks, and without a look at competitor store depth. One-star review avalanche follows.</p></div>
+<div class="card reveal"><div class="card-num">KILLER 03</div><h3>No Traffic Plan</h3><p>The store launches. Then nothing. No ads, no SEO, no content strategy. The owner waits for customers who will never find them.</p></div>
+</div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<section>
+<div class="container">
+<div class="eyebrow reveal">WHAT'S INSIDE</div>
+<h2 class="reveal">Three Pillars That Actually<br>Get Students To Real Revenue</h2>
+<div class="pillar-grid">
+<div class="card reveal"><div class="card-num">PILLAR 1</div><h3>Niche + Product Research</h3><p>The exact framework I use on my own stores. Narrower niches, data-led product picks, supplier sampling before listing. No guesswork.</p></div>
+<div class="card reveal"><div class="card-num">PILLAR 2</div><h3>Store Build + Product Page</h3><p>Shopify set-up, apps, payments, theme. Plus the product page formula that actually converts - hero, headline, reviews, guarantee.</p></div>
+<div class="card reveal"><div class="card-num">PILLAR 3</div><h3>Traffic + Ads</h3><p>Facebook ads from zero to first scale on a small calm budget. Plus content and SEO basics for owners who want free traffic alongside paid.</p></div>
+</div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<section>
+<div class="container">
+<div class="lead-capture reveal">
+<div class="eyebrow">FREE GUIDE</div>
+<h2>The Shopify Niche Selection Guide</h2>
+<p>The criteria I use to pick every niche I teach or operate in. Free download. No upsell, no phone call, no credit card.</p>
+<form class="form-row" onsubmit="event.preventDefault();alert('Check your inbox - guide is on its way.')">
+<input type="email" placeholder="Enter your email" required>
+<button type="submit">Send The Guide →</button>
+</form>
+</div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<section id="apply">
+<div class="container">
+<div class="eyebrow reveal">THE MEMBERSHIP</div>
+<h2 class="reveal">The Ecomm Clubhouse</h2>
+<div class="offer-box reveal">
+<div class="offer-grid">
+<div>
+<div class="offer-price">Monthly access<small>Priced below the cost of a single business book. Cancel any time.</small></div>
+<p style="margin-top:16px;color:var(--muted)">Ten years of refinement. Every module kept current. A member community that has answered almost every question a new store owner can ask. Deliberately priced so you can join, learn, and stay without a long contract.</p>
+<ul class="feature-list">
+<li>Full Shopify build course (set-up, apps, theme, payments)</li>
+<li>Niche research framework and product research system</li>
+<li>Print on demand training with supplier lists</li>
+<li>Dropshipping training for physical products</li>
+<li>Facebook ad training from zero to first scale</li>
+<li>Private member community (searchable, 10 years deep)</li>
+<li>Monthly updates as platforms change</li>
+</ul>
+</div>
+<div>
+<div style="background:rgba(45,212,191,.08);border:1px solid rgba(45,212,191,.2);border-radius:16px;padding:32px;text-align:center">
+<div class="eyebrow">PROOF</div>
+<h3 style="margin-bottom:12px">Kate. Melbourne. $3K/mo In 4 Months.</h3>
+<p style="margin:0 auto 24px;color:var(--muted)">Primary school teacher, zero Shopify experience. One niche, one product, one calm Facebook ad.</p>
+<a href="#" class="cta-primary" style="width:100%">See What's Inside →</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<section>
+<div class="container" style="max-width:820px">
+<div class="eyebrow reveal">FAQ</div>
+<h2 class="reveal">Common Questions</h2>
+<div style="margin-top:40px">
+<div class="faq-item reveal" onclick="this.classList.toggle('open')">
+<div class="faq-q"><span>Do I need any Shopify experience to start?</span><div class="faq-plus"></div></div>
+<div class="faq-a"><p>No. Most members join with zero Shopify experience. The first module is a full walk-through of the set-up, so the first day is not a mystery.</p></div>
+</div>
+<div class="faq-item reveal" onclick="this.classList.toggle('open')">
+<div class="faq-q"><span>Is this dropshipping, print on demand, or both?</span><div class="faq-plus"></div></div>
+<div class="faq-a"><p>Both. Separate training tracks for each, plus guidance on which route suits your budget and niche. You do not have to pick on day one.</p></div>
+</div>
+<div class="faq-item reveal" onclick="this.classList.toggle('open')">
+<div class="faq-q"><span>Can I cancel any time?</span><div class="faq-plus"></div></div>
+<div class="faq-a"><p>Yes. Month to month, no long contract. Cancel inside your account in a couple of clicks. Lose access the day the billing period ends.</p></div>
+</div>
+<div class="faq-item reveal" onclick="this.classList.toggle('open')">
+<div class="faq-q"><span>How much money do I need to start a store?</span><div class="faq-plus"></div></div>
+<div class="faq-a"><p>Realistic starter budget is $500 to $1,500 for Shopify fees, a design or two, samples, and a small ad test. The Clubhouse lays out exactly where each pound or dollar should go.</p></div>
+</div>
+<div class="faq-item reveal" onclick="this.classList.toggle('open')">
+<div class="faq-q"><span>Who is this NOT for?</span><div class="faq-plus"></div></div>
+<div class="faq-a"><p>People looking for overnight results. A real Shopify store needs 90 to 180 days of consistent work before the numbers clear up. If you need cash this month, this isn't the route.</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<section style="text-align:center">
+<div class="container">
+<h2 class="reveal">Ten Years Of Teaching. Proper Results.</h2>
+<p class="reveal" style="margin:20px auto 40px">Join for the price of a decent takeaway. Stay as long as it's useful. Cancel when it isn't.</p>
+<a href="#apply" class="cta-primary reveal">See What's Inside →</a>
+</div>
+</section>
+
+<footer class="footer">
+<div class="container">
+<p>Built by AG1 Consulting · info@andreicopy.net · April 2026</p>
+</div>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&x.target.classList.add('in')),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(e=>obs.observe(e));
+</script>
+</body>
+</html>
